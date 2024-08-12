@@ -2856,6 +2856,17 @@ blog
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* .mil-blog-card .mil-post-descr .mil-post-text {
+  text-overflow: ellipsis;
+  display: -webkit-box; /* Necessary for line-clamp */
+  -webkit-line-clamp: 2; /* WebKit-based browsers */
+  -moz-line-clamp: 2; /* Firefox */
+  line-clamp: 2; /* Standard syntax */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+} */
+
 .mil-blog-card:hover .mil-cover-frame img {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
