@@ -931,7 +931,7 @@ backgrounds
   transition: opacity 1s ease-out;
 }
 
-@media (min-width: 200px) { /* Adjust based on your breakpoint */
+@media (min-width: 100px) { /* Adjust based on your breakpoint */
   #backgroundVideo {
     opacity: 1;
   }
@@ -1918,18 +1918,6 @@ banner
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -1; /* Place the video behind the content */
-}
-
-/* Optionally, hide the video initially and show it after the page has loaded */
-#backgroundVideo {
-  opacity: 0;
-  transition: opacity 1s ease-out;
-}
-
-@media (min-width: 368px) { /* Adjust based on your breakpoint */
-  #backgroundVideo {
-    opacity: 1;
-  }
 }
 
 .mil-banner::before {
