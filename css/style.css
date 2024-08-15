@@ -72,7 +72,7 @@ body {
   font-family: "Outfit", sans-serif;
   font-size: 16px;
   font-weight: 300;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(72, 71, 71, 0.5);
   line-height: 150%;
   -ms-scroll-chaining: none;
       overscroll-behavior: none;
@@ -161,7 +161,7 @@ h5,
 h6,
 .mil-h6 {
   font-family: "Outfit", sans-serif;
-  color: rgb(0, 0, 0);
+  color: rgb(1, 9, 28);
   font-weight: 500;
   line-height: 120%;
 }
@@ -184,37 +184,37 @@ h6 br,
 
 h1,
 .mil-h1 {
-  font-size: 86px;
+  font-size: 75px;
 }
 @media screen and (max-width: 1400px) {
-  h1,
-.mil-h1 {
-    font-size: 74px;
-  }
-}
-@media screen and (max-width: 1200px) {
   h1,
 .mil-h1 {
     font-size: 72px;
   }
 }
+@media screen and (max-width: 1200px) {
+  h1,
+.mil-h1 {
+    font-size: 71px;
+  }
+}
 @media screen and (max-width: 992px) {
   h1,
 .mil-h1 {
-    font-size: 58px;
+    font-size: 56px;
   }
 }
 @media screen and (max-width: 768px) {
   h1,
 .mil-h1 {
-    font-size: 34px;
+    font-size: 32px;
   }
 }
 
 h2,
 .mil-h2 {
-  font-size: 68px;
-  line-height: 120%;
+  font-size: 66px;
+  line-height: 100%;
 }
 @media screen and (max-width: 1200px) {
   h2,
@@ -325,7 +325,7 @@ blockquote {
   padding: 60px;
   background-color: rgba(0, 0, 0, 0.05);
   font-size: 18px;
-  color: rgb(0, 0, 0);
+  color: rgb(1, 9, 28);
   font-style: italic;
   border-left: solid 4px rgb(43, 179, 179);
 }
@@ -380,7 +380,7 @@ a {
 }
 
 .mil-accent {
-  color: rgb(43, 179, 179);
+  color: #2bb3b3;
 }
 
 .mil-light {
@@ -395,7 +395,7 @@ a {
 }
 
 .mil-dark {
-  color: rgb(0, 0, 0);
+  color: rgb(24, 40, 63);
 }
 
 .mil-light-soft {
@@ -459,7 +459,7 @@ a {
   }
 }
 .mil-suptitle.mil-suptitle-dark:before {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(1, 9, 28);
   opacity: 0.1;
 }
 @media screen and (max-width: 768px) {
@@ -532,12 +532,12 @@ link
   fill: rgb(43, 179, 179);
 }
 .mil-link.mil-dark svg {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgb(24, 40, 63);
   -webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
   transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
 }
 .mil-link.mil-dark svg path {
-  fill: rgb(0, 0, 0);
+  fill: white;
 }
 .mil-link:hover svg {
   -webkit-transform: scale(1.15);
@@ -591,7 +591,7 @@ button
   letter-spacing: 2px;
   font-size: 12px;
   background-color: rgb(43, 179, 179);
-  color: rgb(0, 0, 0);
+  color: white;
   border-radius: 70px;
   padding: 0 15px 0 50px;
   height: 70px;
@@ -609,7 +609,7 @@ button
   width: 40px;
   height: 40px;
   padding: 10px;
-  background-color: rgb(0, 0, 0);
+  background-color: white;
   -webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
   transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
 }
@@ -683,7 +683,7 @@ textarea {
   letter-spacing: 2px;
   font-weight: 500;
   font-family: "Outfit", sans-serif;
-  color: rgb(0, 0, 0);
+  color: rgb(1, 9, 28);
   border: none;
   border-bottom: solid 1px rgba(0, 0, 0, 0.2);
   margin-bottom: 30px;
@@ -763,10 +763,10 @@ breadcrumbs
 .mil-breadcrumbs li:after {
   content: "/";
   margin: 0 15px;
-  color: rgb(0, 0, 0);
+  color: rgb(1, 9, 28);
 }
 .mil-breadcrumbs li a {
-  color: rgb(0, 0, 0);
+  color: rgb(1, 9, 28);
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 500;
@@ -809,7 +809,7 @@ breadcrumbs
 backgrounds
 
 ------------------------------------------- */
-
+/* ----------dark--------- */
 .mil-dark-bg {
   position: relative;
 }
@@ -837,6 +837,118 @@ backgrounds
   background-color: rgb(242, 242, 242);
 }
 
+
+
+/* ---light--------- */
+
+.mil-light-bg {
+  height: 100vh;
+  position: relative;
+  background-image: linear-gradient(rgba(2, 0, 27, 0.66), rgba(2, 0, 23, 0.66), rgba(1, 0, 28, 0.779), rgba(1, 0, 28, 0.949), rgba(1, 0, 28, 0.905),rgba(1, 0, 28, 0.889));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* .mil-light-bg {
+  position: relative;
+    background-image: url('../img/blue_bg.jpeg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+} */
+.mil-light-bg:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  /* -webkit-backdrop-filter: invert(100%);
+          backdrop-filter: invert(100%); */
+}
+.mil-light-bg .mi-invert-fix {
+  height: 100%;
+  position: relative;
+  pointer-events: none;
+  z-index: 3;
+}
+.mil-light-bg .mi-invert-fix .container {
+  pointer-events: all;
+}
+
+.mil-soft-bg {
+  background-color: rgb(242, 242, 242);
+}
+
+/* ------plain ------ */
+
+/* ---------image------ */
+.mil-plain-bg {
+  position: relative;
+}
+
+.mil-plain-bg:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  background-color: rgb(1, 9, 28);
+}
+
+.mil-plain-bg .mi-invert-fix {
+  height: 100%;
+  position: relative;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.mil-plain-bg .mi-invert-fix .container {
+  pointer-events: all;
+}
+
+/* -----video----- */
+
+.mil-video-bg {
+  position: relative;
+  overflow: hidden; /* Ensures the video doesn't extend outside the banner */
+}
+
+#backgroundVideo {
+  min-width: 100%; /* Cover the full width of the banner */
+  min-height: 100%; /* Cover the full height of the banner */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1; /* Place the video behind the content */
+}
+
+/* Optionally, hide the video initially and show it after the page has loaded */
+#backgroundVideo {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+@media (min-width: 768px) { /* Adjust based on your breakpoint */
+  #backgroundVideo {
+    opacity: 1;
+  }
+}
+
+.mil-video-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(rgba(2, 0, 27, 0.66), rgba(2, 0, 23, 0.66), rgba(1, 0, 28, 0.779), rgba(1, 0, 28, 0.949), rgba(1, 0, 28, 0.905),rgba(1, 0, 28, 0.889));
+  mix-blend-mode: multiply; /* This blends the gradient with the video */
+}
+
+
 /* -------------------------------------------
 
 spaces
@@ -863,7 +975,7 @@ spaces
 }
 
 .mil-mb-30 {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .mil-mb-60 {
@@ -1033,7 +1145,7 @@ preloader
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(1, 9, 28);
 }
 .mil-preloader .mil-preloader-animation {
   opacity: 0;
@@ -1096,7 +1208,7 @@ cursor
   height: 20px;
   position: fixed;
   z-index: 10;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(1, 9, 28);
   border-radius: 50%;
   pointer-events: none;
   display: -webkit-box;
@@ -1134,10 +1246,10 @@ cursor
           transform: scale(0);
 }
 .mil-ball.mil-accent .mil-icon-1 svg {
-  fill: rgb(0, 0, 0);
+  fill: rgb(1, 9, 28);
 }
 .mil-ball.mil-accent .mil-more-text, .mil-ball.mil-accent .mil-choose-text {
-  color: rgb(0, 0, 0);
+  color: rgb(1, 9, 28);
 }
 @media screen and (max-width: 1200px) {
   .mil-ball {
@@ -1170,7 +1282,7 @@ scrollbar
   right: 0;
   width: 4px;
   height: 100%;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(1, 9, 28);
 }
 .mil-progress-track .mil-progress {
   width: 4px;
@@ -1188,7 +1300,129 @@ scrollbar
 frame
 
 ------------------------------------------- */
-.mil-logo {
+
+/* --------white logo-------- */
+.mil-logo img {
+  max-width: 11%; 
+  height: auto; 
+}
+
+@media screen and (max-width: 992px) {
+  .mil-logo img {
+    min-width: 80px; 
+  }
+}
+
+.mil-frame {
+  padding: 50px 60px 60px 60px;
+  position: fixed;
+  z-index: 2;
+  pointer-events: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width: 1200px) {
+  .mil-frame {
+    padding: 30px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .mil-frame {
+    padding: 0;
+    z-index: 999;
+    height: 90px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .mil-frame .mil-frame-top {
+    height: 90px;
+    background-color: rgba(0, 0, 0, 0.95);
+    border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+    padding: 0 30px;
+    -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+  }
+  .mil-frame .mil-frame-top .mil-logo {
+    color: rgb(255, 255, 255);
+  }
+  .mil-frame .mil-frame-top .mil-menu-btn span, .mil-frame .mil-frame-top .mil-menu-btn span:after, .mil-frame .mil-frame-top .mil-menu-btn span:before {
+    background: rgb(255, 255, 255);
+  }
+}
+.mil-frame .mil-frame-bottom {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+@media screen and (max-width: 1200px) {
+  .mil-frame .mil-frame-bottom {
+    display: none;
+  }
+}
+.mil-frame .mil-frame-bottom .mil-current-page {
+  pointer-events: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  width: 300px;
+  color: rgb(1, 9, 28);
+  -webkit-transform: rotate(-90deg) translateX(138px) translateY(-138px);
+          transform: rotate(-90deg) translateX(138px) translateY(-138px);
+}
+.mil-frame .mil-frame-bottom .mil-back-to-top {
+  width: 300px;
+  -webkit-transform: rotate(-90deg) translateX(130px) translateY(130px);
+          transform: rotate(-90deg) translateX(130px) translateY(130px);
+  pointer-events: all;
+}
+
+.mil-frame-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.mil-frame-top .mil-logo {
+  pointer-events: all;
+  color: white;
+}
+
+/* ---coloured logo----- */
+.mil-logo-contact img {
+  max-width: 11%; 
+  height: auto; 
+}
+
+@media screen and (max-width: 992px) {
+  .mil-logo-contact img {
+    max-width: 80%; 
+  }
+}
+
+/* .mil-logo {
   font-size: 42px;
   font-weight: 500;
   line-height: 100%;
@@ -1269,7 +1503,7 @@ frame
   letter-spacing: 2px;
   font-size: 12px;
   width: 300px;
-  color: rgb(0, 0, 0);
+  color: rgb(1, 9, 28);
   -webkit-transform: rotate(-90deg) translateX(138px) translateY(-138px);
           transform: rotate(-90deg) translateX(138px) translateY(-138px);
 }
@@ -1293,8 +1527,8 @@ frame
 }
 .mil-frame-top .mil-logo {
   pointer-events: all;
-  color: rgb(0, 0, 0);
-}
+  color: white;
+} */
 
 /* -------------------------------------------
 
@@ -1328,7 +1562,7 @@ menu button
   display: block;
   width: 28px;
   height: 2.5px;
-  background: rgb(0, 0, 0);
+  background: white;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   -webkit-transition: inherit;
@@ -1372,7 +1606,7 @@ menu
   z-index: 9;
   width: 100%;
   height: 100vh;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(1, 9, 28);
   opacity: 0;
   pointer-events: none;
   -webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
@@ -1510,7 +1744,7 @@ menu
   margin-right: 30px;
 }
 .mil-menu-list.mil-dark li a {
-  color: rgb(0, 0, 0);
+  color: rgb(1, 9, 28);
 }
 
 .mil-main-menu {
@@ -1668,9 +1902,59 @@ menu
 banner
 
 ------------------------------------------- */
+
+
 .mil-banner {
-  height: 100vh; 
+  position: relative;
+  overflow: hidden; /* Ensures the video doesn't extend outside the banner */
 }
+
+#backgroundVideo {
+  min-width: 100%; /* Cover the full width of the banner */
+  min-height: 100%; /* Cover the full height of the banner */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1; /* Place the video behind the content */
+}
+
+/* Optionally, hide the video initially and show it after the page has loaded */
+#backgroundVideo {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+@media (min-width: 368px) { /* Adjust based on your breakpoint */
+  #backgroundVideo {
+    opacity: 1;
+  }
+}
+
+.mil-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(rgba(2, 0, 27, 0.041), rgba(2, 0, 23, 0.09));
+  mix-blend-mode: multiply; /* This blends the gradient with the video */
+}
+
+
+/* ---image----- */
+/* .mil-banner {
+  height: 100vh;
+  position: relative;
+  background-image: 
+    linear-gradient(rgba(2, 0, 27, 0.66), rgba(2, 0, 23, 0.66), rgba(1, 0, 28, 0.666));
+    url('../img/blue_bg.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+} */
+
 
 .mil-banner .container {
   height: 100%;
@@ -1680,7 +1964,10 @@ banner
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+          
 }
+
+
 .mil-banner .mil-banner-content {
   width: 100%;
   padding-bottom: 120px;
@@ -1834,7 +2121,7 @@ banner
      object-fit: contain;
 }
 .mil-portrait-frame .mil-nimbus {
-  background: radial-gradient(50% 50% at 50% 50%, rgb(43, 179, 179) 0%, rgba(250, 168, 69, 0) 100%);
+  background: radial-gradient(50% 50% at 50% 50%, rgb(43, 179, 179) 0%, rgba(1, 66, 83, 0) 100%);
   width: 100%;
   padding-bottom: 100%;
   position: absolute;
@@ -1942,7 +2229,7 @@ lines
   }
 }
 .mil-lines-place .mil-lines path, .mil-lines-place .mil-lines rect, .mil-lines-place .mil-lines line {
-  stroke: rgb(0, 0, 0);
+  stroke: rgb(1, 9, 28);
 }
 .mil-lines-place .mil-lines .mil-move {
   -webkit-animation: move 10s linear infinite;
@@ -2038,7 +2325,7 @@ dodecahedron
   }
 }
 .mil-position-4.mil-dark .mil-pentagon div {
-  border-top: 0.1px solid rgb(0, 0, 0);
+  border-top: 0.1px solid rgb(1, 9, 28);
 }
 
 .mil-dodecahedron {
@@ -2212,7 +2499,7 @@ about
 }
 .mil-about-quote .mil-avatar:after {
   content: ' " ';
-  color: rgb(0, 0, 0);
+  color: rgb(1, 9, 28);
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -2409,13 +2696,13 @@ services
 }
 
 .mil-services-grid {
-  border-top: solid 1px rgba(255, 255, 255, 0.1);
+  border-top: solid 1px rgba(231, 224, 224, 0.822);
 }
 .mil-services-grid .mil-services-grid-item {
-  border-right: solid 1px rgba(255, 255, 255, 0.1);
+  border-right: solid 1px rgba(231, 224, 224, 0.822);
 }
 .mil-services-grid .mil-services-grid-item:first-child {
-  border-left: solid 1px rgba(255, 255, 255, 0.1);
+  border-left: solid 1px rgba(231, 224, 224, 0.822);
 }
 @media screen and (max-width: 992px) {
   .mil-services-grid {
@@ -2473,7 +2760,7 @@ services
   background-color: rgb(43, 179, 179);
 }
 .mil-service-card-lg.mil-other-card:hover .mil-link svg {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(1, 9, 28);
 }
 .mil-service-card-lg.mil-other-card:hover .mil-link svg path {
   fill: rgb(43, 179, 179);
@@ -2655,7 +2942,7 @@ social icons
   color: rgb(43, 179, 179);
 }
 .mil-social-icons.mil-dark li a {
-  color: rgb(0, 0, 0);
+  color: rgb(1, 9, 28);
 }
 .mil-social-icons.mil-dark li a:hover {
   color: rgb(43, 179, 179);
@@ -2711,7 +2998,7 @@ revievs
           box-shadow: inset 0 0 0 4px rgb(255, 255, 255);
 }
 .mil-revi-pagination .swiper-pagination-bullet .mil-custom-dot {
-  background-color: red;
+  background-color: rgba(1, 0, 28, 0.666);
   width: 90px;
   height: 90px;
   border-radius: 50%;
@@ -2772,7 +3059,7 @@ revievs
   width: 40px;
   height: 40px;
   padding: 10px;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(1, 9, 28);
   border-radius: 50%;
   cursor: pointer;
   -webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
@@ -2849,23 +3136,15 @@ blog
 .mil-blog-card .mil-post-descr {
   padding: 30px 30px 0 0;
 }
-/* .mil-blog-card .mil-post-descr .mil-post-text {
+
+.mil-blog-card .mil-post-descr .mil-post-text {
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-} */
-
-.mil-blog-card .mil-post-descr .mil-post-text {
-  text-overflow: ellipsis;
-  display: -webkit-box; 
-  -webkit-line-clamp: 2; 
-  -moz-line-clamp: 2; 
-  line-clamp: 2; 
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
+
 
 .mil-blog-card:hover .mil-cover-frame img {
   -webkit-transform: scale(1.05);
@@ -2926,7 +3205,7 @@ blog
 
 .mil-pagination {
   padding-top: 60px;
-  border-top: solid 1px rgba(0, 0, 0, 0.1);
+  border-top: solid 1px rgba(1, 0, 28, 0.666);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2944,7 +3223,7 @@ blog
   font-weight: 500;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.1);
-  color: rgb(0, 0, 0);
+  color: rgb(1, 9, 28);
   text-align: center;
   line-height: 40px;
   text-decoration: none;
@@ -2981,7 +3260,7 @@ blog
   background-color: transparent;
   padding: 0 20px;
   border-radius: 40px;
-  color: rgb(0, 0, 0);
+  color: rgb(1, 9, 28);
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 500;
@@ -3071,7 +3350,7 @@ footer
   height: 100%;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.1);
-  color: rgb(0, 0, 0);
+  color: rgb(1, 9, 28);
   font-size: 12px;
   font-weight: 500;
   text-transform: uppercase;
@@ -3427,7 +3706,7 @@ accordion
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  color: rgb(0, 0, 0);
+  color: rgb(1, 9, 28);
   background-color: rgb(229, 229, 229);
   font-size: 16px;
   display: -webkit-box;
@@ -3453,7 +3732,7 @@ accordion
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 500;
-  color: rgb(0, 0, 0);
+  color: rgb(1, 9, 28);
 }
 
 .mil-accordion-content {
@@ -4170,7 +4449,7 @@ page transitions
   position: fixed;
   pointer-events: none;
   z-index: 4;
-  background-color: rgb(0, 0, 0);
+  background-color: rgba(1, 0, 28, 0.666);
   opacity: 0;
   width: 100%;
   height: 100vh;
@@ -4240,4 +4519,257 @@ html.is-animating .mil-menu-frame {
   opacity: 0;
   -webkit-transition-delay: 0.3s;
           transition-delay: 0.3s;
+}
+
+.p-welcome-careers{
+  margin-bottom: 60px;
+}
+/* Chatbot Floating Icon */
+#chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+#chatbot-icon {
+  width: 60px;
+  height: 60px;
+  background-color: rgb(43, 179, 179);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+}
+
+#chatbot-icon img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Chatbot Window */
+#chatbot-window {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  height: 500px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Flex properties to ensure input area sticks to bottom */
+#chatbot-body {
+  padding: 15px;
+  overflow-y: auto;
+  flex: 1; /* Allow this area to grow and shrink as needed */
+  display: flex;
+  flex-direction: column;
+}
+
+#chatbot-header {
+  background-color: rgb(43, 179, 179);
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#chatbot-header button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+/* Chat Bubble Style */
+.chat-bubble {
+  background-color: #e5e5ea;
+  color: #000;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 10px;
+  width: fit-content;
+  max-width: 80%;
+  position: relative;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.chat-bubble::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: -10px;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-right-color: #e5e5ea;
+  border-left: 0;
+  border-bottom: 0;
+  margin-top: -5px;
+  margin-left: -5px;
+}
+
+/* User Message Bubble */
+.user-bubble {
+  align-self: flex-end; /* Align user's messages to the right */
+  background-color: #43b3b3; /* Cyan color for user's message */
+  color: #fff;
+}
+
+.user-bubble::after {
+  left: auto;
+  right: -10px;
+  border-right-color: transparent;
+  border-left-color: #43b3b3; /* Cyan color for user's message */
+}
+
+/* Bot Reply Bubble */
+.bot-bubble {
+  align-self: flex-start; /* Align bot's messages to the left */
+  background-color: #e5e5ea; /* Default bubble color for bot's message */
+  color: #000;
+}
+
+/* Input Area Style */
+#chatbot-input-area {
+  display: flex;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-top: 1px solid #ccc;
+  border-radius: 0 0 10px 10px;
+  max-height: 65px;
+  align-items: baseline;
+}
+
+#chatbot-input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  max-height: 40px;
+  font-size: 14px;
+}
+#chatbot-input::placeholder {
+  font-size: 10px; /* Adjust the font size here */
+  color: #888; /* Optionally, change the color of the placeholder text */
+}
+
+
+#chatbot-send {
+  background-color: rgb(43, 179, 179);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  margin-left: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 18px; /* Increase font size for the icon */
+  max-height: 50px;
+}
+
+#chatbot-send:hover {
+  background-color: #36a3a3;
+}
+
+/* Loader Style */
+.loader {
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  position: relative;
+}
+
+.loader div {
+  top: 10px;
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #333;
+  animation: loader-animation 1.4s infinite ease-in-out;
+}
+
+.loader div:nth-child(1) {
+  left: 6px;
+  animation-delay: -0.32s;
+}
+
+.loader div:nth-child(2) {
+  left: 18px;
+  animation-delay: -0.16s;
+}
+
+.loader div:nth-child(3) {
+  left: 30px;
+}
+
+@keyframes loader-animation {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+/* Option Bubble Style */
+.option-bubble {
+  background-color: #f0f0f0;
+  color: #333;
+  border-radius: 15px;
+  padding: 10px 15px;
+  margin: 5px;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.option-bubble:hover {
+  background-color: #e0e0e0;
+}
+.radio-chatbot {
+  top: 5px;
+  width: 20px; /* Adjust width */
+  height: 20px; /* Adjust height */
+  accent-color: #007bff; /* Change color of the radio button */
+  margin-right: 5px; /* Space between radio button and label */
+  margin-bottom: 0px;
+}
+.tooltip {
+  position: absolute;
+  top: 50%;
+  left: -180px; /* Adjust this value to position the tooltip to the left of the icon */
+  transform: translateY(-50%);
+  background-color: #ffffff;
+  color: #000;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 10;
+  display: block; /* Make it always visible */
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 40%;
+  left: 100%;
+  transform: rotate(180deg);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent #ffffff transparent transparent;
 }
