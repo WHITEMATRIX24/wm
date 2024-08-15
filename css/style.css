@@ -2797,6 +2797,10 @@ services
 team
 
 ------------------------------------------- */
+.row{
+  align-items: center;
+  justify-content: center;
+}
 .mil-team-card {
   position: relative;
   overflow: hidden;
