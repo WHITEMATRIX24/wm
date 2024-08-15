@@ -31,18 +31,7 @@
 </head>
 
 <body>
-    <style>
-        .download-link {
-          display: inline-block;
-          padding: 10px 20px;
-          background-color: #2bb3b3;
-          color: white;
-          text-decoration: none;
-          border-radius: 5px;
-          font-size: 18px;
-          cursor: pointer;
-        }
-      </style>
+
 
     <!-- wrapper -->
     <div class="mil-wrapper" id="top">
@@ -268,7 +257,52 @@
                                 <a href="#" id="downloadLink" class="download-link">Download</a>
                                 </br>
                                 <p class="mil-up mil-mb-60">Join us on this journey of innovation and discover how White Matrix Software Solutions is setting new benchmarks in the software industry with the Matrix-Driven Work Division. For more information, feel free to contact us or visit our website.</p>
-
+                                <style>
+                                    .download-link {
+                                      display: inline-block;
+                                      padding: 10px 20px;
+                                      background-color: #2bb3b3;
+                                      color: white;
+                                      text-decoration: none;
+                                      border-radius: 5px;
+                                      font-size: 18px;
+                                      cursor: pointer;
+                                    }
+                                  </style>
+                                  <script>
+                                    document.getElementById('downloadLink').addEventListener('click', function(event) {
+                                      // Prevent the default action to avoid navigating away
+                                      event.preventDefault();
+                                      
+                                      // Specify the URL of the PDF file you want to download
+                                      var pdfUrl = 'img/Research_paper.pdf';
+                                      
+                                      // Create a new anchor element
+                                      var link = document.createElement('a');
+                                      
+                                      // Set the href attribute to the PDF URL
+                                      link.href = pdfUrl;
+                                      
+                                      // Set the download attribute to force the download
+                                      link.download = 'file.pdf';
+                                      
+                                      // Append the anchor element to the body temporarily
+                                      document.body.appendChild(link);
+                                      
+                                      // Simulate a click on the anchor element
+                                      link.click();
+                                      
+                                      // Remove the anchor element from the body
+                                      document.body.removeChild(link);
+                                    });
+                                    </script>
+                                    <script>
+                                        window.addEventListener('pageshow', function(event) {
+                                          if (event.persisted) {
+                                            window.location.reload();
+                                          }
+                                        });
+                                      </script>
                                 <!-- <div class="row">
                                     <div class="col-lg-6">
 
@@ -628,40 +662,7 @@
     <script src="js/main.js"></script>
 
     <!--download research paper -->
-<script>
-    document.getElementById('downloadLink').addEventListener('click', function(event) {
-      // Prevent the default action to avoid navigating away
-      event.preventDefault();
-      
-      // Specify the URL of the PDF file you want to download
-      var pdfUrl = 'img/Research_paper.pdf';
-      
-      // Create a new anchor element
-      var link = document.createElement('a');
-      
-      // Set the href attribute to the PDF URL
-      link.href = pdfUrl;
-      
-      // Set the download attribute to force the download
-      link.download = 'file.pdf';
-      
-      // Append the anchor element to the body temporarily
-      document.body.appendChild(link);
-      
-      // Simulate a click on the anchor element
-      link.click();
-      
-      // Remove the anchor element from the body
-      document.body.removeChild(link);
-    });
-    </script>
-    <script>
-        window.addEventListener('pageshow', function(event) {
-          if (event.persisted) {
-            window.location.reload();
-          }
-        });
-      </script>
+
 </body>
 
 </html>
