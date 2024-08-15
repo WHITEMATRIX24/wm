@@ -1302,14 +1302,15 @@ frame
 ------------------------------------------- */
 
 /* --------white logo-------- */
-.mil-logo img {
+.mil-logo img,.mil-logo-contact img {
   max-width: 11%; 
   height: auto; 
 }
 
 @media screen and (max-width: 992px) {
-  .mil-logo img {
-    min-width: 80px; 
+  .mil-logo img,.mil-logo-contact img {
+    min-width: 55px; 
+    max-width: 60px;
   }
 }
 
