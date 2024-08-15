@@ -931,7 +931,7 @@ backgrounds
   transition: opacity 1s ease-out;
 }
 
-@media (min-width: 300px) { /* Adjust based on your breakpoint */
+@media (min-width: 200px) { /* Adjust based on your breakpoint */
   #backgroundVideo {
     opacity: 1;
   }
