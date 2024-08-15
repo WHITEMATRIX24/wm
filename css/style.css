@@ -1975,7 +1975,17 @@ banner
 }
 @media screen and (max-width: 992px) {
   .mil-banner .mil-banner-content {
-    padding-bottom: 90px;
+    padding-bottom: 200px;
+  }
+}
+@media screen and (max-width: 780px) {
+  .mil-banner .mil-banner-content {
+    padding-bottom: 300px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .mil-banner .mil-banner-content {
+    padding-bottom: 200px;
   }
 }
 .mil-banner .mil-lines-place {
