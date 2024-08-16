@@ -1959,7 +1959,7 @@ banner
 
 .mil-banner .mil-banner-content {
   width: 100%;
-  padding-bottom: 70px;
+  padding-bottom: 100px;
   position: relative;
 }
 @media screen and (max-width: 992px) {
@@ -1974,7 +1974,7 @@ banner
 }
 @media screen and (max-width: 500px) {
   .mil-banner .mil-banner-content {
-    padding-bottom: 100px;
+    padding-bottom: 180px;
   }
 }
 .mil-banner .mil-lines-place {
@@ -2797,10 +2797,7 @@ services
 team
 
 ------------------------------------------- */
-.row{
-  align-items: center;
-  justify-content: center;
-}
+
 .mil-team-card {
   position: relative;
   overflow: hidden;
