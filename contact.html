@@ -18,9 +18,9 @@
     <!-- ashley scss -->
     <link rel="stylesheet" href="css/style.css">
      <!-- Favicon -->
-     <link rel="icon" href="./img/log.png" type="image/x-icon">
+     <link rel="icon" href="./img/wm-green.png" type="image/x-icon">
     <!-- page name -->
-    <title>WM</title>
+    <title>White Matrix</title>
 
     <meta property="og:title" content="WHITE MATRIX" />
     <meta property="og:description" content="Technology Simplified." />
@@ -458,24 +458,33 @@
 
                                 </div>
                                 <div class="col-md-4 col-lg-6 mil-mb-60">
-
                                     <div class="mil-vert-between">
                                         <div class="mil-mb-30">
                                             <ul class="mil-social-icons mil-up">
-                                               <li>
-                                                    <a href="https://www.instagram.com/white_matrix.s.s/" target="_blank" class="social-icon">
-                                                        <i class="fa-brands fa-instagram"></i>                                                    
+                                                <li>
+                                                    <a href="#" class="social-icon" onclick="handleInstagramClick(event)">
+                                                        <i class="fab fa-instagram"></i>
                                                     </a>
                                                 </li>
-
-                                                <li><a href="https://www.linkedin.com/company/white-matrix/" target="_blank" class="social-icon"> <i class="fa-brands fa-linkedin"></i> </a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="fa-brands fa-facebook"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i class="fa-brands fa-youtube"></i></a></li>
+                                                <li>
+                                                    <a href="#" target="_blank" class="social-icon" onclick="handleLinkedinClick(event)">
+                                                        <i class="fab fa-linkedin"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" target="_blank" class="social-icon">
+                                                        <i class="fab fa-facebook"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" target="_blank" class="social-icon">
+                                                        <i class="fab fa-youtube"></i>
+                                                    </a>
+                                                </li>
                                             </ul>
                                         </div>
                                         <p class="mil-light-soft mil-up">© Copyright 2023. All Rights Reserved.</p>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -613,6 +622,20 @@
     <script src="js/plugins/ScrollTo.min.js"></script>
     <!-- ashley js -->
     <script src="js/main.js"></script>
+
+    <script>
+        function handleInstagramClick(event) {
+            event.preventDefault();
+            const instagramUrl = 'https://www.instagram.com/white_matrix.s.s/';
+            window.open(instagramUrl, '_blank');
+        }
+    
+        function handleLinkedinClick(event) {
+            event.preventDefault();
+            const linkedinurl = 'https://www.linkedin.com/company/white-matrix/';
+            window.open(linkedinurl, '_blank');
+        }
+    </script>
  
 </body>
 
