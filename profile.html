@@ -474,7 +474,7 @@
 /*                                   stackVale = stackElement.textContent
  */                                                                    console.log(stack);
                             let id = urlParams.get('id');
-                            fetch(`http://13.232.214.35:4000/api/user/addInternship/${id}`, {
+                            fetch(`https://admin.whitematrix.co.in/api/user/addInternship/${id}`, {
                                 method: 'POST',
                                 headers: {
                                     'Content-Type': 'application/json',
@@ -516,7 +516,7 @@
                     console.log(id);
 
                     if (id) {
-                        fetch(`http://13.232.214.35:4000/api/user/getUserDetails/${id}`, {
+                        fetch(`https://admin.whitematrix.co.in/api/user/getUserDetails/${id}`, {
                             method: 'GET',
                             headers: {
                                 'Content-Type': 'application/json',
@@ -600,7 +600,7 @@
 
                         //alert('noid')
                         const currentUser = JSON.parse(sessionStorage.getItem("user"))
-                        fetch(`http://13.232.214.35:4000/api/user/getUserDetails/${currentUser._id}`, {
+                        fetch(`https://admin.whitematrix.co.in/api/user/getUserDetails/${currentUser._id}`, {
                             method: 'GET',
                             headers: {
                                 'Content-Type': 'application/json',
@@ -717,7 +717,7 @@
                             const id = user._id;
 
                         }
-                        fetch(`http://13.232.214.35:4000/api/user/submitInternship/${id}`, {
+                        fetch(`https://admin.whitematrix.co.in/api/user/submitInternship/${id}`, {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',
