@@ -80,7 +80,6 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-
   html,
   body {
     font-size: 15px;
@@ -170,7 +169,6 @@ h6,
 }
 
 @media screen and (max-width: 768px) {
-
   h1 br,
   .mil-h1 br,
   h2 br,
@@ -193,7 +191,6 @@ h1,
 }
 
 @media screen and (max-width: 1400px) {
-
   h1,
   .mil-h1 {
     font-size: 72px;
@@ -201,7 +198,6 @@ h1,
 }
 
 @media screen and (max-width: 1200px) {
-
   h1,
   .mil-h1 {
     font-size: 71px;
@@ -209,7 +205,6 @@ h1,
 }
 
 @media screen and (max-width: 992px) {
-
   h1,
   .mil-h1 {
     font-size: 56px;
@@ -217,7 +212,6 @@ h1,
 }
 
 @media screen and (max-width: 768px) {
-
   h1,
   .mil-h1 {
     font-size: 32px;
@@ -231,7 +225,6 @@ h2,
 }
 
 @media screen and (max-width: 1200px) {
-
   h2,
   .mil-h2 {
     font-size: 56px;
@@ -239,7 +232,6 @@ h2,
 }
 
 @media screen and (max-width: 992px) {
-
   h2,
   .mil-h2 {
     font-size: 44px;
@@ -247,7 +239,6 @@ h2,
 }
 
 @media screen and (max-width: 768px) {
-
   h2,
   .mil-h2 {
     font-size: 36px;
@@ -260,7 +251,6 @@ h3,
 }
 
 @media screen and (max-width: 1200px) {
-
   h3,
   .mil-h3 {
     font-size: 39px;
@@ -268,7 +258,6 @@ h3,
 }
 
 @media screen and (max-width: 992px) {
-
   h3,
   .mil-h3 {
     font-size: 36px;
@@ -276,7 +265,6 @@ h3,
 }
 
 @media screen and (max-width: 768px) {
-
   h3,
   .mil-h3 {
     font-size: 30px;
@@ -289,7 +277,6 @@ h4,
 }
 
 @media screen and (max-width: 1200px) {
-
   h4,
   .mil-h4 {
     font-size: 26px;
@@ -297,7 +284,6 @@ h4,
 }
 
 @media screen and (max-width: 992px) {
-
   h4,
   .mil-h4 {
     font-size: 24px;
@@ -305,7 +291,6 @@ h4,
 }
 
 @media screen and (max-width: 768px) {
-
   h4,
   .mil-h4 {
     font-size: 22px;
@@ -319,7 +304,6 @@ h5,
 }
 
 @media screen and (max-width: 768px) {
-
   h5,
   .mil-h5 {
     font-size: 18px;
@@ -333,7 +317,6 @@ h6,
 }
 
 @media screen and (max-width: 1200px) {
-
   h6,
   .mil-h6 {
     font-size: 17px;
@@ -341,7 +324,6 @@ h6,
 }
 
 @media screen and (max-width: 992px) {
-
   h6,
   .mil-h6 {
     font-size: 16px;
@@ -349,7 +331,6 @@ h6,
 }
 
 @media screen and (max-width: 768px) {
-
   h6,
   .mil-h6 {
     font-size: 21px;
@@ -990,14 +971,19 @@ backgrounds
   background-color: rgb(242, 242, 242);
 }
 
-
-
 /* ---light--------- */
 
 .mil-light-bg {
   height: 100vh;
   position: relative;
-  background-image: linear-gradient(rgba(2, 0, 27, 0.66), rgba(2, 0, 23, 0.66), rgba(1, 0, 28, 0.779), rgba(1, 0, 28, 0.949), rgba(1, 0, 28, 0.905), rgba(1, 0, 28, 0.889));
+  background-image: linear-gradient(
+    rgba(2, 0, 27, 0.66),
+    rgba(2, 0, 23, 0.66),
+    rgba(1, 0, 28, 0.779),
+    rgba(1, 0, 28, 0.949),
+    rgba(1, 0, 28, 0.905),
+    rgba(1, 0, 28, 0.889)
+  );
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1092,7 +1078,6 @@ backgrounds
 }
 
 @media (min-width: 100px) {
-
   /* Adjust based on your breakpoint */
   #backgroundVideo {
     opacity: 1;
@@ -1100,17 +1085,23 @@ backgrounds
 }
 
 .mil-video-bg::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background: linear-gradient(rgba(2, 0, 27, 0.66), rgba(2, 0, 23, 0.66), rgba(1, 0, 28, 0.779), rgba(1, 0, 28, 0.949), rgba(1, 0, 28, 0.905), rgba(1, 0, 28, 0.889));
+  background: linear-gradient(
+    rgba(2, 0, 27, 0.66),
+    rgba(2, 0, 23, 0.66),
+    rgba(1, 0, 28, 0.779),
+    rgba(1, 0, 28, 0.949),
+    rgba(1, 0, 28, 0.905),
+    rgba(1, 0, 28, 0.889)
+  );
   mix-blend-mode: multiply;
   /* This blends the gradient with the video */
 }
-
 
 /* -------------------------------------------
 
@@ -1372,7 +1363,11 @@ preloader
   padding: 0 30px;
 }
 
-.mil-preloader .mil-preloader-animation .mil-pos-abs .mil-reveal-frame .mil-reveal-box {
+.mil-preloader
+  .mil-preloader-animation
+  .mil-pos-abs
+  .mil-reveal-frame
+  .mil-reveal-box {
   z-index: 4;
   position: absolute;
   opacity: 0;
@@ -1507,7 +1502,6 @@ frame
 }
 
 @media screen and (max-width: 992px) {
-
   .mil-logo img,
   .mil-logo-contact img {
     min-width: 55px;
@@ -2070,22 +2064,22 @@ menu
   background-color: rgb(43, 179, 179);
 }
 
-.mil-main-menu ul li.mil-active>a {
+.mil-main-menu ul li.mil-active > a {
   color: rgb(43, 179, 179);
 }
 
-.mil-main-menu ul li.mil-active>a:hover {
+.mil-main-menu ul li.mil-active > a:hover {
   color: rgb(43, 179, 179) !important;
   -webkit-filter: brightness(110%);
   filter: brightness(110%);
 }
 
-.mil-main-menu ul li.mil-has-children>a:hover {
+.mil-main-menu ul li.mil-has-children > a:hover {
   color: rgb(255, 255, 255);
   padding-left: 25px;
 }
 
-.mil-main-menu ul li.mil-has-children>a:hover:before {
+.mil-main-menu ul li.mil-has-children > a:hover:before {
   -webkit-transform: scale(1);
   transform: scale(1);
 }
@@ -2182,7 +2176,6 @@ banner
 
 ------------------------------------------- */
 
-
 .mil-banner {
   position: relative;
   overflow: hidden;
@@ -2203,7 +2196,7 @@ banner
 }
 
 .mil-banner::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -2213,7 +2206,6 @@ banner
   mix-blend-mode: multiply;
   /* This blends the gradient with the video */
 }
-
 
 /* ---image----- */
 /* .mil-banner {
@@ -2227,7 +2219,6 @@ banner
   background-repeat: no-repeat;
 } */
 
-
 .mil-banner .container {
   height: 100%;
   display: -webkit-box;
@@ -2236,9 +2227,7 @@ banner
   -webkit-box-align: end;
   -ms-flex-align: end;
   align-items: flex-end;
-
 }
-
 
 .mil-banner .mil-banner-content {
   width: 100%;
@@ -2349,7 +2338,11 @@ banner
   display: flex;
 }
 
-.mil-banner-personal .mil-banner-content .mil-banner-panel .mil-right .mil-social-frame {
+.mil-banner-personal
+  .mil-banner-content
+  .mil-banner-panel
+  .mil-right
+  .mil-social-frame {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2368,7 +2361,11 @@ banner
   transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
 }
 
-.mil-banner-personal .mil-banner-content .mil-banner-panel .mil-right .mil-social-frame:hover {
+.mil-banner-personal
+  .mil-banner-content
+  .mil-banner-panel
+  .mil-right
+  .mil-social-frame:hover {
   -webkit-transform: scale(1.015);
   transform: scale(1.015);
 }
@@ -2381,7 +2378,11 @@ banner
     flex-direction: column;
   }
 
-  .mil-banner-personal .mil-banner-content .mil-banner-panel .mil-right .mil-social-frame {
+  .mil-banner-personal
+    .mil-banner-content
+    .mil-banner-panel
+    .mil-right
+    .mil-social-frame {
     margin-right: 0;
     margin-bottom: 30px;
     height: 60px;
@@ -2426,7 +2427,11 @@ banner
 }
 
 .mil-portrait-frame .mil-nimbus {
-  background: radial-gradient(50% 50% at 50% 50%, rgb(43, 179, 179) 0%, rgba(1, 66, 83, 0) 100%);
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgb(43, 179, 179) 0%,
+    rgba(1, 66, 83, 0) 100%
+  );
   width: 100%;
   padding-bottom: 100%;
   position: absolute;
@@ -3191,7 +3196,6 @@ services
   list-style-type: none;
   padding: 15px 0;
   /* text-transform: uppercase; */
-
 }
 
 .mil-service-list li:first-child {
@@ -3612,7 +3616,6 @@ blog
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-
 
 .mil-blog-card:hover .mil-cover-frame img {
   -webkit-transform: scale(1.05);
@@ -5018,7 +5021,7 @@ images
   overflow: hidden;
 }
 
-.mil-image-frame>img {
+.mil-image-frame > img {
   position: absolute;
   top: 0;
   left: 0;
@@ -5256,7 +5259,6 @@ html.is-animating .mil-menu-frame {
   cursor: pointer;
 }
 
-
 /* Chat Bubble Style */
 .chat-bubble {
   background-color: #e5e5ea;
@@ -5272,7 +5274,7 @@ html.is-animating .mil-menu-frame {
 }
 
 .chat-bubble::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 10px;
   left: -10px;
@@ -5339,7 +5341,6 @@ html.is-animating .mil-menu-frame {
   /* Optionally, change the color of the placeholder text */
 }
 
-
 #chatbot-send {
   background-color: rgb(43, 179, 179);
   color: #fff;
@@ -5390,7 +5391,6 @@ html.is-animating .mil-menu-frame {
 }
 
 @keyframes loader-animation {
-
   0%,
   80%,
   100% {
@@ -5449,7 +5449,7 @@ html.is-animating .mil-menu-frame {
 }
 
 .tooltip::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 40%;
   left: 100%;
@@ -5457,4 +5457,109 @@ html.is-animating .mil-menu-frame {
   border-width: 6px;
   border-style: solid;
   border-color: transparent #ffffff transparent transparent;
+}
+
+/* ******************************** */
+
+/* Business section */
+
+/* ********************************** */
+
+.business_wrapper {
+  padding: 3rem 2rem;
+}
+.business_container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.business_section_head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.business_section_head_button_container {
+  display: flex;
+}
+#business_scroll_left,
+#business_scroll_right {
+  outline: none;
+  border: none;
+}
+.business_section_body {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  overflow-x: scroll;
+}
+.business_section_card {
+  position: relative;
+  min-width: 22rem;
+  width: 22rem;
+  height: 32rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.business_section_card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 2s;
+  transform: scale(1);
+  object-fit: cover;
+}
+.business_section_card:hover img {
+  transform: scale(1.2);
+}
+
+.business_section_card_title_container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  padding: 1rem 2rem;
+  width: 100%;
+}
+.business_section_card_title_container h6 {
+  font-size: 1rem;
+  color: white;
+  font-weight: 300;
+  overflow-wrap: break-word;
+}
+.business_section_card_name {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.business_section_card_title_container button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 3px;
+  padding-bottom: 8px;
+}
+
+.business_section_card:hover .business_section_card_title_container button {
+  border-bottom: 2px solid #007bff;
+}
+
+.business_section_card_overly {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+}
+
+@media (min-width: 1200px) {
+  .business_wrapper {
+    padding: 5rem 11rem;
+  }
 }
