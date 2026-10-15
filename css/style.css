@@ -3251,6 +3251,8 @@ team
 ------------------------------------------- */
 
 .mil-team-card {
+  display: block;
+  cursor: pointer;
   position: relative;
   overflow: hidden;
   padding-bottom: 130%;
@@ -3329,6 +3331,15 @@ team
   transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
+}
+
+.mil-team-card .mil-description .mil-secrc-text h5 {
+  -webkit-transition: 0.2s cubic-bezier(0, 0, 0.3642, 1);
+  transition: 0.2s cubic-bezier(0, 0, 0.3642, 1);
+}
+
+.mil-team-card:hover .mil-description .mil-secrc-text h5 {
+  color: rgb(43, 179, 179);
 }
 
 .mil-team-card .mil-description .mil-secrc-text a {

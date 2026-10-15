@@ -1422,6 +1422,8 @@ team
 ------------------------------------------- */
 
 .mil-team-card {
+    display: block;
+    cursor: pointer;
     position: relative;
     overflow: hidden;
     padding-bottom: 130%;
@@ -1479,6 +1481,10 @@ team
             transition: $t-md;
             transition-delay: 0s;
 
+            & h5 {
+                transition: $t-sm;
+            }
+
             & a {
                 color: $light;
                 transition: $t-sm;
@@ -1507,6 +1513,10 @@ team
                 opacity: 1;
                 transform: translateY(0);
                 transition-delay: .1s;
+
+                & h5 {
+                    color: $accent;
+                }
             }
         }
     }
