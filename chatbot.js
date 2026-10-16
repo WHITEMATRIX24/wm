@@ -18,8 +18,8 @@ const isLocalChatbotHost = !window.location.hostname || ['localhost', '127.0.0.1
 const BACKEND_URL = (window.WHITE_MATRIX_CHATBOT_API_BASE_URL ||
     (isLocalChatbotHost ? 'http://localhost:5005/api' : '/api')).replace(/\/+$/, '');
 
-// Direct Gemini & Supabase credentials for zero-downtime static operation
-const GEMINI_API_KEY = 'AQ.Ab8RN6JXKDbF1Q9brqCQq8ulOOw-Hfje8RPn26gN6P66zMuEaA';
+// Direct Gemini & Supabase credentials (for optional direct client mode)
+const GEMINI_API_KEY = window.GEMINI_API_KEY || '';
 const SUPABASE_URL = 'https://bkcrrwogvebshreoohgy.supabase.co';
 const SUPABASE_KEY = 'sb_publishable__FIVV-w3JY97MOhhNJe6WA_2-erIg8V';
 
@@ -241,7 +241,7 @@ async function sendMessage() {
     // Engine 1: Try local Express / Vercel serverless backend first (3.5s timeout)
     try {
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 3500);
+        const timeoutId = setTimeout(() => controller.abort(), 25000);
         const response = await fetch(`${BACKEND_URL}/chat`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
