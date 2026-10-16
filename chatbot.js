@@ -91,9 +91,9 @@ function toggleChatbot() {
 function sendInitialMessage() {
     const initialMessage = `Hello! How can I assist you today? You can ask me anything about our software solutions, products, and careers, or pick a topic below:
         <div style="margin-top: 10px;">
-            <button class="chatbot-quick-btn" onclick="handleOption('Tell me about White Matrix services')">💼 Our Services</button>
-            <button class="chatbot-quick-btn" onclick="handleOption('What enterprise products do you offer?')">🚀 Our Products</button>
-            <button class="chatbot-quick-btn" onclick="handleOption('Are there any career or internship opportunities?')">🎓 Careers & Internships</button>
+            <button class="chatbot-quick-btn" onclick="handleOption('Tell me about White Matrix services')">Our Services</button>
+            <button class="chatbot-quick-btn" onclick="handleOption('What enterprise products do you offer?')">Our Products</button>
+            <button class="chatbot-quick-btn" onclick="handleOption('Are there any career or internship opportunities?')">Careers & Internships</button>
         </div>`;
     addMessageToChat('bot-bubble', initialMessage);
     initialMessageSent = true;
