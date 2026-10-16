@@ -20,8 +20,9 @@ app.use(cors({
 app.use(express.json());
 app.use(morgan('dev'));
 
-// Routes
+// Routes (support both /api/* and /* for Vercel serverless functions)
 app.use('/api', chatRoutes);
+app.use('/', chatRoutes);
 
 // Root route
 app.get('/', (req, res) => {

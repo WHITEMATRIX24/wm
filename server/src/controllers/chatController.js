@@ -101,10 +101,10 @@ export async function handleSaveLead(req, res) {
 }
 
 export function handleHealth(req, res) {
-  const geminiKey = process.env.GEMINI_API_KEY?.trim();
-  const supabaseUrl = process.env.SUPABASE_URL?.trim();
-  const supabaseKey = process.env.SUPABASE_ANON_KEY?.trim();
-  const geminiConfigured = Boolean(geminiKey && geminiKey !== 'your_gemini_api_key_here');
+  const rawKey = (process.env.GEMINI_API_KEY || '').trim().replace(/^["']|["']$/g, '');
+  const supabaseUrl = (process.env.SUPABASE_URL || '').trim();
+  const supabaseKey = (process.env.SUPABASE_ANON_KEY || '').trim();
+  const geminiConfigured = Boolean(rawKey && rawKey !== 'your_gemini_api_key_here');
   const supabaseConfigured = Boolean(
     supabaseUrl &&
     supabaseKey &&
@@ -116,7 +116,11 @@ export function handleHealth(req, res) {
     status: 'ok',
     timestamp: new Date().toISOString(),
     geminiConfigured,
-    supabaseConfigured
+    geminiKeyPrefix: geminiConfigured ? `${rawKey.substring(0, 6)}...` : null,
+    geminiKeyLength: geminiConfigured ? rawKey.length : 0,
+    geminiModel: process.env.GEMINI_MODEL || 'gemini-3.5-flash-lite (default)',
+    supabaseConfigured,
+    isVercel: Boolean(process.env.VERCEL)
   });
 }
 

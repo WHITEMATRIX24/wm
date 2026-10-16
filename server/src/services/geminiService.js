@@ -50,10 +50,13 @@ If a user expresses interest in hiring White Matrix, getting a quote, or startin
  * @returns {Promise<string>} - Bot reply text
  */
 export async function generateGeminiReply(userMessage, history = []) {
-  const apiKey = process.env.GEMINI_API_KEY?.trim();
+  // Sanitize API key (strip whitespace, surrounding quotes or trailing newlines from copy-pasting)
+  const apiKey = (process.env.GEMINI_API_KEY || '')
+    .trim()
+    .replace(/^["']|["']$/g, '');
 
   if (!apiKey || apiKey === 'your_gemini_api_key_here') {
-    throw new Error('GEMINI_API_KEY is not configured in server/.env');
+    throw new Error('GEMINI_API_KEY is not configured in environment variables');
   }
 
   // Format contents for Gemini REST API
@@ -90,13 +93,19 @@ export async function generateGeminiReply(userMessage, history = []) {
   };
 
   // Models to try in order of priority (handles temporary 503 or model deprecations)
-  const configuredModel = process.env.GEMINI_MODEL?.trim();
+  const configuredModel = (process.env.GEMINI_MODEL || '')
+    .trim()
+    .replace(/^["']|["']$/g, '');
+
   const modelsToTry = [
     ...(configuredModel ? [configuredModel] : []),
     'gemini-3.5-flash-lite',
+    'gemini-2.5-flash-lite',
     'gemini-flash-lite-latest',
+    'gemini-flash-latest',
+    'gemini-3.5-flash',
     'gemini-3.8-flash'
-  ].filter((m, i, arr) => arr.indexOf(m) === i);
+  ].filter((m, i, arr) => arr.indexOf(m) === i && Boolean(m));
 
   let lastError = null;
 
@@ -105,7 +114,7 @@ export async function generateGeminiReply(userMessage, history = []) {
     const timeoutId = setTimeout(() => controller.abort(), 20000);
     try {
       const response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(currentModel)}:generateContent`,
+        `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(currentModel)}:generateContent?key=${encodeURIComponent(apiKey)}`,
         {
           method: 'POST',
           headers: {
