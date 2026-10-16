@@ -16,7 +16,7 @@
     <!-- fancybox css -->
     <link rel="stylesheet" href="css/plugins/fancybox.min.css">
     <!-- ashley scss -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=dotted-offices-flush-20261017">
     <!-- Favicon -->
     <link rel="icon" href="./img/favicon.png" type="image/x-icon">
     <!-- page name -->
@@ -234,60 +234,64 @@
                 <!-- banner end -->
 
 
-                <!-- map -->
-                <div class="mil-map-frame mil-up">
-                    <div class="mil-map">
-                        <iframe
-                            src="https://www.google.com/maps/d/u/2/embed?mid=1G6jfraO8k_nBXj16uqfZ_gLeYPweAwg&ehbc=2E312F"
-                            width="640" height="480"></iframe>
-                        <!-- Overlay div -->
-                        <div class="mil-map-overlay">
-                            <span>Click to view in full screen</span>
+                <!-- office locations -->
+                <section class="wm-office-section" aria-labelledby="wm-office-title">
+                    <div class="container">
+                        <div class="wm-office-heading mil-up">
+                            <div>
+                                <span class="wm-office-eyebrow">WHITE MATRIX · GLOBAL PRESENCE</span>
+                                <h2 id="wm-office-title">Rooted in Kerala.<br><span>Connected worldwide.</span></h2>
+                            </div>
+                            <p>Explore our offices across India, the Gulf, and Europe.</p>
+                        </div>
+
+                        <div class="wm-office-panel mil-up">
+                            <div class="wm-office-panel-top">
+                                <div>
+                                    <span class="wm-office-panel-label">OUR LOCATIONS</span>
+                                    <p>Select a city to find it on the map.</p>
+                                </div>
+                                <span class="wm-office-count"><strong>07</strong> locations <i></i> 05 countries</span>
+                            </div>
+
+                            <div class="wm-office-map-wrap">
+                                <svg id="wm-dotted-world-map" viewBox="0 0 1200 560" role="img"
+                                    aria-labelledby="wm-map-title wm-map-description">
+                                    <title id="wm-map-title">White Matrix office locations</title>
+                                    <desc id="wm-map-description">A dotted world map highlighting offices in India, Qatar, the United Arab Emirates, Ireland, and the United Kingdom.</desc>
+                                    <g id="wm-map-dots" aria-hidden="true"></g>
+                                    <g id="wm-office-markers" aria-hidden="true"></g>
+                                </svg>
+                                <div class="wm-map-coordinate" aria-hidden="true">GLOBAL NETWORK <span>·</span> 07 OFFICES</div>
+                            </div>
+
+                            <div class="wm-office-list" role="group" aria-label="Office locations">
+                                <button type="button" class="wm-office-location" data-office="thrissur" aria-pressed="false">
+                                    <span class="wm-office-location-dot"></span><span><strong>Thrissur</strong><small>India</small></span>
+                                </button>
+                                <button type="button" class="wm-office-location" data-office="kochi" aria-pressed="false">
+                                    <span class="wm-office-location-dot"></span><span><strong>Kochi</strong><small>India</small></span>
+                                </button>
+                                <button type="button" class="wm-office-location" data-office="bangalore" aria-pressed="false">
+                                    <span class="wm-office-location-dot"></span><span><strong>Bangalore</strong><small>India</small></span>
+                                </button>
+                                <button type="button" class="wm-office-location" data-office="doha" aria-pressed="false">
+                                    <span class="wm-office-location-dot"></span><span><strong>Doha</strong><small>Qatar</small></span>
+                                </button>
+                                <button type="button" class="wm-office-location" data-office="dubai" aria-pressed="false">
+                                    <span class="wm-office-location-dot"></span><span><strong>Dubai</strong><small>UAE</small></span>
+                                </button>
+                                <button type="button" class="wm-office-location" data-office="dublin" aria-pressed="false">
+                                    <span class="wm-office-location-dot"></span><span><strong>Dublin</strong><small>Ireland</small></span>
+                                </button>
+                                <button type="button" class="wm-office-location" data-office="london" aria-pressed="false">
+                                    <span class="wm-office-location-dot"></span><span><strong>London</strong><small>United Kingdom</small></span>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- map end -->
-
-                <style>
-                    .mil-map-frame {
-                        position: relative;
-                    }
-
-                    .mil-map-overlay {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        background-color: rgba(0, 0, 0, 0.5);
-                        color: white;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        opacity: 0;
-                        transition: opacity 0.3s ease;
-                        cursor: pointer;
-                        font-size: 18px;
-                        font-weight: bold;
-                    }
-
-                    .mil-map-frame:hover .mil-map-overlay {
-                        opacity: 1;
-                    }
-                </style>
-
-                <script>
-                    document.querySelector('.mil-map-overlay, .mil-map-overlay').addEventListener('click', function () {
-                        window.location.href = 'https://www.google.com/maps/d/u/2/embed?mid=1G6jfraO8k_nBXj16uqfZ_gLeYPweAwg&ehbc=2E312F';
-                    });
-                </script>
-                <!-- map end -->
-                <script>
-                    const map = new google.maps.Map(document.getElementById('map'), {
-                        scrollwheel: false, // Disable zoom on scroll
-                    });
-
-                </script>
+                </section>
+                <!-- office locations end -->
 
                 <!-- contact form -->
                 <section id="contact">
@@ -653,6 +657,7 @@
     <script src="js/plugins/ScrollTo.min.js"></script>
     <!-- ashley js -->
     <script src="js/main.js"></script>
+    <script src="js/dotted-office-map.js?v=dotted-offices-flush-20261017"></script>
 
     <script>
         function handleInstagramClick(event) {
