@@ -61,39 +61,61 @@ If a user expresses interest in hiring White Matrix, getting a quote, or startin
 `;
 
 // Toggle chatbot open/close
+function dismissChatbotWelcome() {
+    const welcomePopup = document.getElementById('chatbot-welcome');
+    if (!welcomePopup) return;
+
+    welcomePopup.classList.add('is-dismissed');
+    welcomePopup.setAttribute('aria-hidden', 'true');
+}
+
 function toggleChatbot() {
     const chatbotWindow = document.getElementById('chatbot-window');
     const chatbotIcon = document.getElementById('chatbot-icon');
-    const chatbotTooltip = document.getElementById('chatbot-tooltip');
     if (!chatbotWindow) return;
 
-    const currentDisplay = getComputedStyle(chatbotWindow).display;
+    const isOpen = chatbotWindow.classList.contains('is-open');
 
-    if (currentDisplay === 'none' || currentDisplay === '') {
-        chatbotWindow.style.display = 'flex';
-        chatbotWindow.scrollTop = chatbotWindow.scrollHeight;
+    if (!isOpen) {
+        dismissChatbotWelcome();
+        chatbotWindow.classList.add('is-open');
+        chatbotWindow.setAttribute('aria-hidden', 'false');
         if (chatbotIcon) chatbotIcon.style.display = 'none';
-        if (chatbotTooltip) chatbotTooltip.style.display = 'none';
+        if (chatbotIcon) chatbotIcon.setAttribute('aria-expanded', 'true');
 
         if (!initialMessageSent) {
             sendInitialMessage();
         }
         enableInput();
-        document.getElementById('chatbot-input')?.focus();
+        window.requestAnimationFrame(() => document.getElementById('chatbot-input')?.focus());
     } else {
-        chatbotWindow.style.display = 'none';
-        if (chatbotIcon) chatbotIcon.style.display = '';
-        if (chatbotTooltip) chatbotTooltip.style.display = 'block';
+        chatbotWindow.classList.remove('is-open');
+        chatbotWindow.setAttribute('aria-hidden', 'true');
+        if (chatbotIcon) {
+            chatbotIcon.style.display = '';
+            chatbotIcon.setAttribute('aria-expanded', 'false');
+            chatbotIcon.focus();
+        }
     }
 }
 
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && document.getElementById('chatbot-window')?.classList.contains('is-open')) {
+        toggleChatbot();
+    }
+});
+
 // Initial prompt options
 function sendInitialMessage() {
-    const initialMessage = `Hello! How can I assist you today? You can ask me anything about our software solutions, products, and careers, or pick a topic below:
-        <div style="margin-top: 10px;">
-            <button class="chatbot-quick-btn" onclick="handleOption('Tell me about White Matrix services')">Our Services</button>
-            <button class="chatbot-quick-btn" onclick="handleOption('What enterprise products do you offer?')">Our Products</button>
-            <button class="chatbot-quick-btn" onclick="handleOption('Are there any career or internship opportunities?')">Careers & Internships</button>
+    const quickArrow = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M10 4l6 6-6 6" /></svg>';
+    const initialMessage = `<div class="chatbot-intro-copy">
+            <p class="chatbot-intro-lead">Welcome to White Matrix.</p>
+            <p>I'm M'Bot, your AI assistant. Ask me about our services, products, or careers.</p>
+        </div>
+        <div class="chatbot-quick-actions" aria-label="Suggested questions">
+            <button class="chatbot-quick-btn" onclick="handleOption('Tell me about White Matrix services')"><span>Our services</span>${quickArrow}</button>
+            <button class="chatbot-quick-btn" onclick="handleOption('What enterprise products do you offer?')"><span>Explore our products</span>${quickArrow}</button>
+            <button class="chatbot-quick-btn" onclick="handleOption('Are there any career or internship opportunities?')"><span>Careers and internships</span>${quickArrow}</button>
         </div>`;
     addMessageToChat('bot-bubble', initialMessage);
     initialMessageSent = true;

@@ -16,7 +16,7 @@
     <!-- fancybox css -->
     <link rel="stylesheet" href="css/plugins/fancybox.min.css">
     <!-- ashley scss -->
-    <link rel="stylesheet" href="css/style.css?v=network-hover-20261016">
+    <link rel="stylesheet" href="css/style.css?v=chatbot-welcome-20261017">
     <!-- Favicon -->
     <link rel="icon" href="./img/favicon.png" type="image/x-icon">
     <!-- page name -->
@@ -304,38 +304,6 @@
                     </div>
                 </section>
                 <!-- banner end -->
-
-                <!-- Chatbot Floating Icon and Window -->
-                <div id="chatbot-container">
-                    <div id="chatbot-icon" onclick="toggleChatbot()">
-                        <img src="./img/chatbot.svg" alt="Chatbot" />
-                        <div id="chatbot-tooltip" class="tooltip ">Hi, Welcome to White Matrix!</div>
-                    </div>
-                    <div id="chatbot-window" style="display: none;">
-                        <div id="chatbot-header">
-                            <span><strong>Chatbot</strong></span>
-                            <button onclick="toggleChatbot()">✖</button>
-                        </div>
-                        <div id="chatbot-body">
-                            <div class="chat-bubble">
-                                <p>Hi, Welcome to White Matrix Software Solutions! My Name is M'Bot. I'm here to assist
-                                    you!</p>
-                            </div>
-                        </div>
-                        <div id="chatbot-input-area">
-                            <input type="text" id="chatbot-input" placeholder="Type your message here..." />
-                            <button id="chatbot-send" onclick="sendMessage()">
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-                <script src="chatbot.js"></script>
-                <link rel="stylesheet"
-                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-                <!-- Chatbot End -->
 
                 <!-- Transforming businesses section -->
                 <section id="transform_business">
@@ -1214,6 +1182,42 @@
     </div>
     <!-- wrapper end -->
 
+    <!-- Floating chatbot, kept outside the clipped page wrapper -->
+    <div id="chatbot-container">
+        <div id="chatbot-welcome" role="status" aria-live="polite">
+            <span>Welcome to White Matrix</span>
+            <button type="button" onclick="dismissChatbotWelcome()" aria-label="Dismiss welcome message">&times;</button>
+        </div>
+        <button id="chatbot-icon" type="button" onclick="toggleChatbot()" aria-label="Open M'Bot chat" aria-controls="chatbot-window" aria-expanded="false">
+            <span class="chatbot-launcher-mark"><img src="./img/chatbot.svg" alt="" /></span>
+        </button>
+        <div id="chatbot-window" role="dialog" aria-label="Chat with M'Bot" aria-hidden="true" tabindex="-1">
+            <div id="chatbot-header">
+                <div class="chatbot-header-identity">
+                    <span class="chatbot-avatar"><img src="./img/chatbot.svg" alt="" /></span>
+                    <span class="chatbot-header-copy">
+                        <strong>M'Bot</strong>
+                        <span>White Matrix AI assistant</span>
+                    </span>
+                </div>
+                <div class="chatbot-header-tools">
+                    <span class="chatbot-online"><i aria-hidden="true"></i>AI</span>
+                    <button type="button" onclick="toggleChatbot()" aria-label="Close chat">
+                        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15" /></svg>
+                    </button>
+                </div>
+            </div>
+            <div id="chatbot-body" role="log" aria-live="polite" aria-relevant="additions text" aria-label="Chat messages"></div>
+            <div id="chatbot-input-area">
+                <input type="text" id="chatbot-input" aria-label="Message M'Bot" placeholder="Ask about services, products, or careers" autocomplete="off" />
+                <button id="chatbot-send" type="button" onclick="sendMessage()" aria-label="Send message">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h14M12 5.5 18.5 12 12 18.5" /></svg>
+                </button>
+            </div>
+            <div class="chatbot-composer-note"><span>White Matrix AI</span><span>Enter to send</span></div>
+        </div>
+    </div>
+
     <!-- jQuery js -->
     <script src="js/plugins/jquery.min.js"></script>
     <!-- swup js -->
@@ -1232,6 +1236,8 @@
     <script src="js/plugins/ScrollTo.min.js"></script>
     <!-- ashley js -->
     <script src="js/main.js?v=network-hover-20261016"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="chatbot.js?v=chatbot-welcome-20261017"></script>
 
     <script>
         function handleInstagramClick(event) {
