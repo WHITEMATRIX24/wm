@@ -1106,31 +1106,25 @@ backgrounds
   /* Ensures the video doesn't extend outside the banner */
 }
 
-#backgroundVideo {
-  min-width: 100%;
-  /* Cover the full width of the banner */
-  min-height: 100%;
-  /* Cover the full height of the banner */
+.video-wrapper {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-  /* Place the video behind the content */
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
 }
 
-/* Optionally, hide the video initially and show it after the page has loaded */
-#backgroundVideo {
-  opacity: 0;
-  transition: opacity 1s ease-out;
+.background-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-@media (min-width: 100px) {
-
-  /* Adjust based on your breakpoint */
-  #backgroundVideo {
-    opacity: 1;
-  }
+.mil-video-bg > .mi-invert-fix {
+  position: relative;
+  z-index: 2;
 }
 
 .mil-video-bg::before {
@@ -1140,6 +1134,8 @@ backgrounds
   right: 0;
   bottom: 0;
   left: 0;
+  z-index: 1;
+  pointer-events: none;
   background: linear-gradient(rgba(2, 0, 27, 0.66),
       rgba(2, 0, 23, 0.66),
       rgba(1, 0, 28, 0.779),
@@ -2226,19 +2222,6 @@ banner
   /* Ensures the video doesn't extend outside the banner */
 }
 
-#backgroundVideo {
-  min-width: 100%;
-  /* Cover the full width of the banner */
-  min-height: 100%;
-  /* Cover the full height of the banner */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-  /* Place the video behind the content */
-}
-
 .mil-banner::before {
   content: "";
   position: absolute;
@@ -2246,6 +2229,8 @@ banner
   right: 0;
   bottom: 0;
   left: 0;
+  z-index: 1;
+  pointer-events: none;
   background: linear-gradient(rgba(2, 0, 27, 0.041), rgba(2, 0, 23, 0.09));
   mix-blend-mode: multiply;
   /* This blends the gradient with the video */
