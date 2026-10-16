@@ -1098,28 +1098,26 @@ backgrounds
   pointer-events: all;
 }
 
-/* -----video----- */
+/* -----interactive network background----- */
 
 .mil-video-bg {
   position: relative;
   overflow: hidden;
-  /* Ensures the video doesn't extend outside the banner */
+  background-color: rgb(1, 8, 24);
 }
 
-.video-wrapper {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
+.mil-banner {
+  background-color: rgb(1, 8, 24);
 }
 
-.background-video {
+.mil-network-canvas {
   position: absolute;
   inset: 0;
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .mil-video-bg > .mi-invert-fix {
@@ -1136,14 +1134,8 @@ backgrounds
   left: 0;
   z-index: 1;
   pointer-events: none;
-  background: linear-gradient(rgba(2, 0, 27, 0.66),
-      rgba(2, 0, 23, 0.66),
-      rgba(1, 0, 28, 0.779),
-      rgba(1, 0, 28, 0.949),
-      rgba(1, 0, 28, 0.905),
-      rgba(1, 0, 28, 0.889));
-  mix-blend-mode: multiply;
-  /* This blends the gradient with the video */
+  background: linear-gradient(rgba(1, 8, 24, 0.42), rgba(1, 8, 24, 0.68));
+  mix-blend-mode: normal;
 }
 
 /* -------------------------------------------
@@ -3034,6 +3026,9 @@ services
   position: relative;
   display: block;
   padding: 60px 30px;
+  outline: 1px solid transparent;
+  outline-offset: -1px;
+  transition: outline-color 0.3s ease;
 }
 
 .mil-service-card-sm p {
@@ -3087,6 +3082,11 @@ services
   width: 100%;
 }
 
+.mil-service-card-sm:hover,
+.mil-service-card-sm:focus-visible {
+  outline-color: rgba(255, 255, 255, 0.8);
+}
+
 @media screen and (max-width: 992px) {
   .mil-service-card-sm p {
     opacity: 1;
@@ -3104,15 +3104,15 @@ services
 }
 
 .mil-services-grid {
-  border-top: solid 1px rgba(231, 224, 224, 0.822);
+  border: 0;
 }
 
 .mil-services-grid .mil-services-grid-item {
-  border-right: solid 1px rgba(231, 224, 224, 0.822);
+  border: 0;
 }
 
 .mil-services-grid .mil-services-grid-item:first-child {
-  border-left: solid 1px rgba(231, 224, 224, 0.822);
+  border: 0;
 }
 
 @media screen and (max-width: 992px) {
@@ -3121,11 +3121,11 @@ services
   }
 
   .mil-services-grid .mil-services-grid-item {
-    border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+    border: 0;
   }
 
   .mil-services-grid .mil-services-grid-item:nth-child(3) {
-    border-left: solid 1px rgba(255, 255, 255, 0.1);
+    border: 0;
   }
 }
 
@@ -3135,8 +3135,7 @@ services
   }
 
   .mil-services-grid .mil-services-grid-item {
-    border-left: solid 1px rgba(255, 255, 255, 0.1);
-    border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+    border: 0;
   }
 }
 

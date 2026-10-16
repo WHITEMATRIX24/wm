@@ -13,6 +13,151 @@ $(function () {
 
     "use strict";
 
+    function initInteractiveNetworks() {
+        document.querySelectorAll(".mil-network-canvas:not([data-network-ready])").forEach(function (canvas) {
+            const section = canvas.parentElement;
+            const context = canvas.getContext("2d");
+
+            if (!section || !context) return;
+
+            canvas.dataset.networkReady = "true";
+
+            const pointer = { x: 0, y: 0, active: false };
+            const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+            let width = 0;
+            let height = 0;
+            let pixelRatio = 1;
+            let connectionDistance = 205;
+            let points = [];
+
+            function resize() {
+                const bounds = section.getBoundingClientRect();
+                const nextWidth = Math.max(1, bounds.width);
+                const nextHeight = Math.max(1, bounds.height);
+
+                if (nextWidth === width && nextHeight === height) return;
+
+                width = nextWidth;
+                height = nextHeight;
+                connectionDistance = width < 700 ? 165 : 220;
+                pixelRatio = Math.min(window.devicePixelRatio || 1, 1.5);
+                canvas.width = Math.round(width * pixelRatio);
+                canvas.height = Math.round(height * pixelRatio);
+                context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+
+                const pointCount = Math.min(240, Math.max(60, Math.round((width * height) / 9500)));
+                points = Array.from({ length: pointCount }, function () {
+                    return {
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        vx: (Math.random() - 0.5) * 0.46,
+                        vy: (Math.random() - 0.5) * 0.46
+                    };
+                });
+            }
+
+            function draw() {
+                resize();
+                context.clearRect(0, 0, width, height);
+
+                if (pointer.active) {
+                    const glow = context.createRadialGradient(pointer.x, pointer.y, 0, pointer.x, pointer.y, 190);
+                    glow.addColorStop(0, "rgba(18, 214, 195, 0.10)");
+                    glow.addColorStop(1, "rgba(18, 214, 195, 0)");
+                    context.fillStyle = glow;
+                    context.fillRect(pointer.x - 190, pointer.y - 190, 380, 380);
+                }
+
+                for (let i = 0; i < points.length; i += 1) {
+                    const point = points[i];
+
+                    if (!reduceMotion.matches) {
+                        if (pointer.active) {
+                            const dx = point.x - pointer.x;
+                            const dy = point.y - pointer.y;
+                            const distance = Math.hypot(dx, dy);
+
+                            if (distance > 0 && distance < 145) {
+                                const force = ((145 - distance) / 145) * 0.42;
+                                point.vx += (dx / distance) * force;
+                                point.vy += (dy / distance) * force;
+                            }
+                        }
+
+                        point.vx = Math.max(-0.9, Math.min(0.9, point.vx * 0.995));
+                        point.vy = Math.max(-0.9, Math.min(0.9, point.vy * 0.995));
+                        point.x += point.vx;
+                        point.y += point.vy;
+
+                        if (point.x < -10 || point.x > width + 10) point.vx *= -1;
+                        if (point.y < -10 || point.y > height + 10) point.vy *= -1;
+                        point.x = Math.max(0, Math.min(width, point.x));
+                        point.y = Math.max(0, Math.min(height, point.y));
+                    }
+
+                    for (let j = i + 1; j < points.length; j += 1) {
+                        const other = points[j];
+                        const dx = point.x - other.x;
+                        const dy = point.y - other.y;
+                        const distance = Math.hypot(dx, dy);
+
+                        if (distance > connectionDistance) continue;
+
+                        let hoverStrength = 0;
+                        if (pointer.active) {
+                            const midpointX = (point.x + other.x) / 2;
+                            const midpointY = (point.y + other.y) / 2;
+                            const pointerDistance = Math.hypot(midpointX - pointer.x, midpointY - pointer.y);
+                            hoverStrength = Math.max(0, 1 - pointerDistance / 190);
+                        }
+
+                        const opacity = (1 - distance / connectionDistance) * (0.25 + hoverStrength * 0.7);
+                        context.strokeStyle = "rgba(72, 255, 232, " + opacity + ")";
+                        context.lineWidth = 0.7 + hoverStrength * 1.05;
+                        context.beginPath();
+                        context.moveTo(point.x, point.y);
+                        context.lineTo(other.x, other.y);
+                        context.stroke();
+                    }
+
+                    const pointDistance = pointer.active ? Math.hypot(point.x - pointer.x, point.y - pointer.y) : Infinity;
+                    const pointGlow = Math.max(0, 1 - pointDistance / 155);
+                    context.beginPath();
+                    context.arc(point.x, point.y, 1.25 + pointGlow * 2, 0, Math.PI * 2);
+                    context.fillStyle = "rgba(112, 255, 236, " + (0.42 + pointGlow * 0.55) + ")";
+                    context.fill();
+                }
+
+                if (!reduceMotion.matches && canvas.isConnected) {
+                    window.requestAnimationFrame(draw);
+                }
+            }
+
+            section.addEventListener("pointermove", function (event) {
+                const bounds = canvas.getBoundingClientRect();
+                pointer.x = event.clientX - bounds.left;
+                pointer.y = event.clientY - bounds.top;
+                pointer.active = true;
+                if (reduceMotion.matches) draw();
+            }, { passive: true });
+
+            section.addEventListener("pointerleave", function () {
+                pointer.active = false;
+                if (reduceMotion.matches) draw();
+            }, { passive: true });
+
+            if (typeof ResizeObserver !== "undefined") {
+                new ResizeObserver(resize).observe(section);
+            } else {
+                window.addEventListener("resize", resize, { passive: true });
+            }
+
+            draw();
+        });
+    }
+
+    initInteractiveNetworks();
+
     /***************************
 
     swup
@@ -614,6 +759,8 @@ $(function () {
     ------------------------------------------------------------
     ----------------------------------------------------------*/
     document.addEventListener("swup:contentReplaced", function () {
+
+        initInteractiveNetworks();
 
         $('html, body').animate({
             scrollTop: 0,

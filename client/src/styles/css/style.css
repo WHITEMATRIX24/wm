@@ -3049,6 +3049,9 @@ services
   position: relative;
   display: block;
   padding: 60px 30px;
+  outline: 1px solid transparent;
+  outline-offset: -1px;
+  transition: outline-color 0.3s ease;
 }
 
 .mil-service-card-sm p {
@@ -3102,6 +3105,11 @@ services
   width: 100%;
 }
 
+.mil-service-card-sm:hover,
+.mil-service-card-sm:focus-visible {
+  outline-color: rgba(255, 255, 255, 0.8);
+}
+
 @media screen and (max-width: 992px) {
   .mil-service-card-sm p {
     opacity: 1;
@@ -3119,15 +3127,15 @@ services
 }
 
 .mil-services-grid {
-  border-top: solid 1px rgba(231, 224, 224, 0.822);
+  border: 0;
 }
 
 .mil-services-grid .mil-services-grid-item {
-  border-right: solid 1px rgba(231, 224, 224, 0.822);
+  border: 0;
 }
 
 .mil-services-grid .mil-services-grid-item:first-child {
-  border-left: solid 1px rgba(231, 224, 224, 0.822);
+  border: 0;
 }
 
 @media screen and (max-width: 992px) {
@@ -3136,11 +3144,11 @@ services
   }
 
   .mil-services-grid .mil-services-grid-item {
-    border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+    border: 0;
   }
 
   .mil-services-grid .mil-services-grid-item:nth-child(3) {
-    border-left: solid 1px rgba(255, 255, 255, 0.1);
+    border: 0;
   }
 }
 
@@ -3150,8 +3158,7 @@ services
   }
 
   .mil-services-grid .mil-services-grid-item {
-    border-left: solid 1px rgba(255, 255, 255, 0.1);
-    border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+    border: 0;
   }
 }
 
