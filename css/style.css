@@ -5473,6 +5473,33 @@ html.is-animating .mil-menu-frame {
   margin-bottom: 0px;
 }
 
+.chatbot-quick-btn {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 8px 12px;
+  background-color: #ffffff;
+  color: rgb(43, 179, 179);
+  border: 1px solid rgb(43, 179, 179);
+  border-radius: 14px;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chatbot-quick-btn:hover {
+  background-color: rgb(43, 179, 179);
+  color: #ffffff;
+}
+
+.chat-bubble a {
+  color: rgb(43, 179, 179);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
 .tooltip {
   position: absolute;
   top: 50%;
