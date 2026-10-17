@@ -7,14 +7,14 @@ const PHONE_REGEX = /(\+?\d{1,4}[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}|\b\
 
 export async function handleChatMessage(req, res) {
   try {
-    const { message, sessionId = 'default-session', history = [] } = req.body;
+    const { message, sessionId = 'default-session', history = [], pageId = 'general' } = req.body;
 
     if (!message || typeof message !== 'string') {
       return res.status(400).json({ error: 'Message is required and must be a string' });
     }
 
     // 1. Generate reply from Gemini AI
-    const reply = await generateGeminiReply(message, history);
+    const reply = await generateGeminiReply(message, history, pageId);
 
     // 2. Asynchronously log to Supabase (if Supabase is configured)
     if (supabase) {
