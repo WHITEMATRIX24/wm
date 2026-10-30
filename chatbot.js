@@ -106,15 +106,15 @@ Key Information about White Matrix:
 - Key Leadership & Team:
   - Yadhukrishnan K A (Co-founder & Director)
   - Suhail Mohamed Iqbal (Technical Head & Co-founder)
-  - Lead AI Full Stack Developer: Haniel Henry
-  - AI Research Developer: Aashna Jose Alappattu, Lesmin Jibu Ukken
-  - AI Interns: Sourav S Pradeep
-  - Flutter Development Team: 
+  - Lead AI Full Stack Developer: Haniel Henry, Aashna Jose Alappattu, Lesmin Jibu Ukken
+  - Project Delivery Manager : Swathi Parmeswaran
+  - AI Interns: Sourav S Pradeep , Swathi Parmeswaran
+  - Associate Flutter Developers: Avany P U, Sadiya Aboobacker
   - Tech Ascent Interns: 
   - UI/UX Team: Adil Hafeez (Lead), Sonu James, Shameema Naazar, Aadi Pradeep, Nilophar Rajiv Nair.
-  - Business Development Team: Swathi Parmeswaran, Alen N Saji
+  - Business Development Team: Alen N Saji
   - Business Analysts: Meril Mathew, Nasreena Hassan
-  - Human Resources: Anukrishna K A
+  - Human Resources: Anukrishna K A , Swathi Parmeswaran
 - Important Links on the website:
   - Services: services.html, software.html, ai.html, voip.html
   - Products: matrixErpSuite.html, fleetManager.html, eduPulse.html
